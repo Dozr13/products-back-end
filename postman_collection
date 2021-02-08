@@ -34,12 +34,12 @@
 					"raw": "{\n\t\"name\": \"name 0\",\n\t\"description\": \"description 0\",\n\t\"price\": 0,\n\t\"image_url\": \"imageurl 0\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/products",
+					"raw": "http://localhost:3031/api/products",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3031",
 					"path": [
 						"api",
 						"products"
@@ -77,12 +77,12 @@
 					"raw": "{\n\t\"name\": \"name 1\",\n\t\"description\": \"description 1\",\n\t\"price\": 1,\n\t\"image_url\": \"imageurl 1\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/products",
+					"raw": "http://localhost:3031/api/products",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3031",
 					"path": [
 						"api",
 						"products"
@@ -120,12 +120,12 @@
 					"raw": "{\n\t\"name\": \"name 2\",\n\t\"description\": \"description 2\",\n\t\"price\": 2,\n\t\"image_url\": \"imageurl 2\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/products",
+					"raw": "http://localhost:3031/api/products",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3031",
 					"path": [
 						"api",
 						"products"
@@ -193,12 +193,12 @@
 					"raw": "{\n\t\"name\": \"name 2\",\n\t\"description\": \"description 2\",\n\t\"price\": 2,\n\t\"imageurl\": \"imageurl 2\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/products",
+					"raw": "http://localhost:3031/api/products",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3031",
 					"path": [
 						"api",
 						"products"
@@ -247,12 +247,12 @@
 					"raw": "{\n\t\"name\": \"name 2\",\n\t\"description\": \"description 2\",\n\t\"price\": 2,\n\t\"imageurl\": \"imageurl 2\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/products/{{productID_0}}",
+					"raw": "http://localhost:3031/api/products/{{productID_0}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3031",
 					"path": [
 						"api",
 						"products",
@@ -277,12 +277,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/products/{{productID_0}}?desc=updated",
+					"raw": "http://localhost:3031/api/products/{{productID_0}}?desc=updated",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3031",
 					"path": [
 						"api",
 						"products",
@@ -329,12 +329,12 @@
 					"raw": "{\n\t\"name\": \"name 2\",\n\t\"description\": \"description 2\",\n\t\"price\": 2,\n\t\"imageurl\": \"imageurl 2\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/products/{{productID_0}}",
+					"raw": "http://localhost:3031/api/products/{{productID_0}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3031",
 					"path": [
 						"api",
 						"products",
@@ -359,12 +359,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/products/{{productID_0}}",
+					"raw": "http://localhost:3031/api/products/{{productID_0}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3031",
 					"path": [
 						"api",
 						"products",
@@ -389,12 +389,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/products/{{productID_1}}",
+					"raw": "http://localhost:3031/api/products/{{productID_1}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3031",
 					"path": [
 						"api",
 						"products",
@@ -419,12 +419,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/products/{{productID_2}}",
+					"raw": "http://localhost:3031/api/products/{{productID_2}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3031",
 					"path": [
 						"api",
 						"products",
@@ -465,12 +465,12 @@
 					"raw": "{\n\t\"name\": \"name 2\",\n\t\"description\": \"description 2\",\n\t\"price\": 2,\n\t\"imageurl\": \"imageurl 2\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/products",
+					"raw": "http://localhost:3031/api/products",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3031",
 					"path": [
 						"api",
 						"products"
