@@ -1,2 +1,2 @@
-UPDATE product SET product_id = $1 
-WHERE description = $2;
+UPDATE product SET description = $2 
+WHERE product_id = $1;

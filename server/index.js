@@ -10,7 +10,7 @@ const { SERVER_PORT, CONNECTION_STRING } = process.env;
 
 app.use( express.json() )
 
-// !Everytime install massive with DevMountain, will use massive function below in order to connect db
+// ! Every time install massive with DevMountain, will use massive function below in order to connect db
 massive({
   connectionString: CONNECTION_STRING,
   ssl: { 

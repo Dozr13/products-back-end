@@ -31,45 +31,63 @@ export default class Main extends Component {
     })
   }
 
-  delete = ( id ) => {
-    axios.delete(`/api/products/${ id }`)
-      .then( res => {
-        // console.log(res)
-        // console.log(res.data)
+  updateText = ( id, val ) => {
+    const editProducts = this.state.products.slice()
+    // console.log(editProducts)
+    const index = editProducts.findIndex( ( p ) => p.product_id === id )
+    let product = editProducts[index]
+    // console.log(index)
+    product.description = val
+    editProducts.splice(index, 1, product)
+    this.setState({
+      products: editProducts
+    }, () => console.log(this.state.products))
+  }
 
-        const products = this.state.products.filter( product => product.id !== id)
-        this.setState({ products })
+  updateBtn = ( id ) => {
+    let index = this.state.products.findIndex( ( p ) => p.product_id === id )
+    // console.log(index)
+    let description = this.state.products[ index ].description
+    // console.log(description)
+    axios.put( `/api/products/${ id }?desc=${ description }` )
+      .then( res => {
+        this.setState({
+        products: res.data
+      })
+    })
+  }
+
+  delete = ( id ) => {
+    // console.log( `id = ${id}` )
+    axios.delete( `/api/products/${ id }` )
+      .then( res => {
+        this.setState({ 
+          products: res.data 
+        })
       })
       .catch( err => {
         console.log( err )
       })
 
-    // .then( res => {
-    //   // console.log( res.data )
-    //   this.setState(previousState => {
-    //     return {
-    //       products: previousState.products.filter( p => p.id !== this.products.id )
-    //     }
-    //   })
-    // })
-    // .catch( err => {
-    //   console.log( err )
-    // })
   }
 
   render() {
-
-    let product = this.state.products.map(( p, i ) => <div key={ i }>
+    // console.log(this.state)
+    let product = this.state.products.map(( p, i ) => <div className="sectional-products" key={ i }>
       <h2>{ p.name }</h2>
       <img src={ p.image_url } alt={ p.name } />
-      <p>{ p.description }</p>
       <p>{ p.price }</p>
-      <button className="btn remove-btn" onClick={ (e) => this.delete( product.id ) }>Remove Product</button>
+      <h3>Description: </h3>
+      <input className="update-input" type="text" value={ p.description } onChange={ (e) => this.updateText( p.product_id, e.target.value ) } />
+      <button className="update-btn" onClick={ (e) => this.updateBtn( p.product_id ) }>Update Info</button>
+      <br/>
+      <button className="remove-btn" onClick={ (e) => this.delete( p.product_id ) }>Remove Product</button>
       </div>
     )
 
     return (
       <section className='main'>
+
         { product }
 
         <Create add={ this.create } />

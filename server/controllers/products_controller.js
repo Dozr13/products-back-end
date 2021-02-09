@@ -9,7 +9,7 @@ module.exports = {
     const { name, description, price, image_url } = req.body;
 
     dbInstance.create_product([ name, description, price, image_url ])
-      .then( () => { dbInstance.read_products().then( res => res.status( 200 ).send( res.data ) )
+      .then( () => { dbInstance.read_products().then( products => res.status( 200 ).send( products ) )
       })
       .catch( err => {
         res.status( 500 ).send({ errorMessage })
@@ -21,7 +21,7 @@ module.exports = {
     const dbInstance = req.app.get( 'db' );
     const { id } = req.params;
 
-    dbInstance.read_product( id )
+    dbInstance.read_product( +id )
       .then( product => res.status( 200 ).send( product ) )
       .catch( err => {
         res.status( 500 ).send({ errorMessage })
@@ -44,8 +44,11 @@ module.exports = {
     const dbInstance = req.app.get( 'db' );
     const { params, query } = req;
 
+    console.log(params.id, query.desc)
+    
     dbInstance.update_product([ params.id, query.desc ])
-      .then( () => res.sendStatus( 200 ) )
+      .then( () => { dbInstance.read_products().then( products => res.status( 200 ).send( products ) )
+      })
       .catch( err => {
         res.status( 500 ).send({ errorMessage })
         console.log( err )
@@ -55,9 +58,11 @@ module.exports = {
   delete: ( req, res, next ) => {
     const dbInstance = req.app.get( 'db' );
     const { id } = req.params;
+    // console.log( req.params )
 
-    dbInstance.delete_product( id )
-      .then( () => res.sendStatus( 200 ) )
+    dbInstance.delete_product( +id )
+      .then( () => { dbInstance.read_products().then( products => res.status( 200 ).send( products ) )
+      })
       .catch( err => {
         res.status( 500 ).send({ errorMessage })
         console.log( err )

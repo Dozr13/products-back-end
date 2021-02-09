@@ -23,6 +23,7 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  text-align: center;
   background-color: rgb(75, 75, 75);
 }
 
@@ -33,4 +34,27 @@
 .main-products {
   display: flex;
   flex-direction: column;
+}
+
+.sectional-products {
+  width: 50%;
+}
+
+.update-input {
+  background-color: seashell;
+  padding: .7rem;
+}
+
+.update-btn {
+  background-color: #0f0f0f;
+  color: red;
+  border-radius: 20%;
+  padding: 1rem;
+}
+
+.remove-btn {
+  background-color: #0f0f0f;
+  color: red;
+  border-radius: 20px;
+  padding: 1rem;
 }
