@@ -1,6 +1,7 @@
 .App {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
   margin: 0;
 }
 
@@ -13,10 +14,23 @@
   align-items: center;
   color: rgb(109, 94, 161);
   background-color: #0f0f0f;
+  border-bottom: 3px solid #33eeff;
 }
 
 .main {
   height: 87vh;
   width: 100vw;
-  
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: rgb(75, 75, 75);
+}
+
+.main img {
+  width: 20vw;
+}
+
+.main-products {
+  display: flex;
+  flex-direction: column;
 }

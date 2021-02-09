@@ -9,7 +9,8 @@ module.exports = {
     const { name, description, price, image_url } = req.body;
 
     dbInstance.create_product([ name, description, price, image_url ])
-      .then( () => res.sendStatus( 200 ) )
+      .then( () => { dbInstance.read_products().then( res => res.status( 200 ).send( res.data ) )
+      })
       .catch( err => {
         res.status( 500 ).send({ errorMessage })
         console.log( err )
