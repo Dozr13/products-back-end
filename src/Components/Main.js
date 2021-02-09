@@ -16,9 +16,8 @@ export default class Main extends Component {
   componentDidMount() {
     axios.get( '/api/products' )
     .then( ( res ) => { 
-      this.setState({
-        products: res.data
-      })
+      const products = res.data;
+      this.setState({ products })
      })
   }
 
@@ -34,34 +33,46 @@ export default class Main extends Component {
 
   delete = ( id ) => {
     axios.delete(`/api/products/${ id }`)
-    .then( res => {
-      // console.log( res.data )
-      this.setState({
-        products: res.data
+      .then( res => {
+        // console.log(res)
+        // console.log(res.data)
+
+        const products = this.state.products.filter( product => product.id !== id)
+        this.setState({ products })
       })
-    })
-    .catch( err => {
-      console.log( err )
-    })
+      .catch( err => {
+        console.log( err )
+      })
+
+    // .then( res => {
+    //   // console.log( res.data )
+    //   this.setState(previousState => {
+    //     return {
+    //       products: previousState.products.filter( p => p.id !== this.products.id )
+    //     }
+    //   })
+    // })
+    // .catch( err => {
+    //   console.log( err )
+    // })
   }
 
   render() {
 
-    let product = this.state.products.map(( p, i ) => {
-      return (
-      <div key={ i }>
+    let product = this.state.products.map(( p, i ) => <div key={ i }>
       <h2>{ p.name }</h2>
       <img src={ p.image_url } alt={ p.name } />
-      <p>{ p.price }</p>
       <p>{ p.description }</p>
+      <p>{ p.price }</p>
+      <button className="btn remove-btn" onClick={ (e) => this.delete( product.id ) }>Remove Product</button>
       </div>
-      )
-    })
+    )
 
     return (
       <section className='main'>
         { product }
-        <Create add={ this.create }  delete={ this.delete } />
+
+        <Create add={ this.create } />
       </section>
     )
   }
